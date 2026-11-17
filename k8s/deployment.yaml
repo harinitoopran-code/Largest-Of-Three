@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: largest-app
+  labels:
+    app: largest-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: largest-app
+  template:
+    metadata:
+      labels:
+        app: largest-app
+    spec:
+      containers:
+        - name: largest-app
+          image: largest-of-three:latest
+          imagePullPolicy: IfNotPresent   # use the local image (Docker Desktop / minikube)
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 5

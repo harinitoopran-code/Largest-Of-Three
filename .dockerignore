@@ -1,0 +1,6 @@
+node_modules
+.git
+Jenkinsfile
+k8s
+test
+README.md

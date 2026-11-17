@@ -1,0 +1,12 @@
+{
+  "name": "largest-of-three",
+  "version": "1.0.0",
+  "description": "Largest of three numbers - GitHub, Jenkins, Docker, Kubernetes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
